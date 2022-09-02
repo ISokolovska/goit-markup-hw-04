@@ -9,6 +9,7 @@
 /* color-border-projects: rgba(238, 238, 238, 1) */
 /* color-border-header: rgba(236, 236, 236, 1) */
 /* color-icon: rgba(175, 177, 184, 1) */
+/* gradient-hero: rgba(47, 48, 58, 0.4) */
 
 :root {
   --primary-text-color: rgba(33, 33, 33, 1);
@@ -22,6 +23,7 @@
   --color-border-projects: rgba(238, 238, 238, 1);
   --color-border-header: rgba(236, 236, 236, 1);
   --color-icon: rgba(175, 177, 184, 1);
+  --gradient-hero: rgba(47, 48, 58, 0.4);
 }
 
 body {
@@ -119,11 +121,12 @@ body {
 }
 
 .auth-nav .item + .item {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
-.auth-nav .link {
-  display: block;
+a.auth-svg {
+  display: inline-flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -136,8 +139,8 @@ body {
   text-decoration: none;
 }
 
-.auth-nav .link:hover,
-.auth-nav .link:focus {
+.auth-svg:hover,
+.auth-svg:focus {
   color: var(--accent-color);
 }
 
@@ -145,21 +148,13 @@ body {
   background-color: var(--button-text-color);
 }
 
-/* .item.email::before {
-  content: "";
-  width: 16px;
-  height: 12px;
+.auth-svg {
+  color: var(--secondary-text-color);
+}
+.icon-envelope {
+  fill: currentColor;
   margin-right: 10px;
-} */
-
-/* 
-.contacts .phone::before {
-  content: "";
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-} */
-
+}
 
 /* Hero */
 
@@ -173,7 +168,7 @@ body {
   
   outline: 1px solid var(--overlay);
 
-  background-image: url("../images/imgoverlay.png"), url("../images/hero.jpg");
+  background-image: linear-gradient(var(--gradient-hero), var(--gradient-hero)), url("../images/hero.jpg");
   background-color: var(--bcg-hero-color);
   background-repeat: no-repeat;
   background-position: center;
@@ -300,7 +295,6 @@ ul.button.list {
 .section.features {
   padding-bottom: 94px;
   padding-top: 94px;
-
 }
 
 .features .title {
@@ -398,57 +392,77 @@ ul.button.list {
   padding-bottom: 30px;
 }
 
+.command-name .vector.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.command-name.list .item {
+  margin-right: 10px;
+}
+
+.command-name.list .item:last-child {
+  margin-right: 0;
+}
+
+.command-name .icon {
+  fill: var(--color-icon);
+}
+
+.command-name .icon:hover,
+.command-name .icon:focus
+ {
+  fill: var(--button-text-color);
+}
+
 /* Regular client */
 
 .section.regularclient {
   padding-top: 94px;
   padding-bottom: 94px;
-  justify-content: space-between;
 }
 
 .clients.list {
-    display: flex;
-    justify-content: space-between;
-  }
-
-.regularclient .item {
-  max-width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid var(--color-icon);
+  display: flex;
+  justify-content: space-between;
 }
 
 .regularclient .item:hover {
   border: 1px solid var(--accent-color);
 }
 
-
-
-ul.clients {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 ul.clients .item {
   margin-right: 30px;
 }
 
+ul.clients .item:last-child {
+  margin-right: 0;
+}
 
+.clients-svg {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--color-icon);
 
+  justify-content: center;
+  align-items: center;
+  fill: currentColor;
+}
 
-
-
-
-
-
-
-
+.clients-icon {
+  color: var(--color-icon);
+}
+ 
+.clients-icon:hover {
+  color: var(--accent-color);
+}
 
 /* Footer */
 
 .footer {
+  display: flex;
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--bcg-hero-color);
@@ -488,6 +502,54 @@ ul.clients .item {
 
 .contacts .item {
   margin-top: 9px;
+}
+
+/* Social */
+
+.container.social {
+  display: flex;
+  align-items: baseline;
+}
+
+div.vector {
+  margin-left: 70px;
+}
+
+.vector .title {
+  margin-bottom: 20px;
+  color: var(--button-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.vector .list {
+  display: flex;
+}
+
+.vector.list .item {
+  margin-right: 10px;
+}
+
+.vector.list .item:last-child {
+  margin-right: 0;
+}
+
+.link-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--button-text-color);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.link-svg:hover,
+.link-svg:focus {
+  background-color: var(--accent-color);
 }
 
 /* Portfolio */
