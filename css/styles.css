@@ -248,6 +248,7 @@ ul.button.list {
   background-color: var(--bcg-button-color);
   color: var(--primary-text-color);
   box-shadow: none;
+  border-radius: 4px;
 
   font-family: inherit;
   font-weight: 500;
@@ -273,6 +274,7 @@ ul.button.list {
   font-size: 36px;
   line-height: 1.2;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .section .title-none {
@@ -390,6 +392,8 @@ ul.button.list {
 .command-name {
   padding-top: 30px;
   padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .command-name .vector.list {
@@ -406,14 +410,25 @@ ul.button.list {
   margin-right: 0;
 }
 
-.command-name .icon {
-  fill: var(--color-icon);
+.command-name .link-svg
+{
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-icon);
 }
 
-.command-name .icon:hover,
-.command-name .icon:focus
- {
-  fill: var(--button-text-color);
+.command-name .link-svg:hover,
+.command-name .link-svg:focus
+{
+  color: var(--button-text-color);
+  background-color: var(--accent-color);
+}
+
+.command-name .icon {
+  fill: currentColor;
 }
 
 /* Regular client */
@@ -428,12 +443,9 @@ ul.button.list {
   justify-content: space-between;
 }
 
-.regularclient .item:hover {
-  border: 1px solid var(--accent-color);
-}
-
 ul.clients .item {
   margin-right: 30px;
+  border-radius: 1px;
 }
 
 ul.clients .item:last-child {
@@ -444,19 +456,19 @@ ul.clients .item:last-child {
   display: flex;
   width: 170px;
   height: 92px;
-  border: 1px solid var(--color-icon);
-
   justify-content: center;
   align-items: center;
-  fill: currentColor;
+  color: var(--color-icon);
+  border: 1px solid var(--color-icon);
+}
+
+.clients-svg:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color); 
 }
 
 .clients-icon {
-  color: var(--color-icon);
-}
- 
-.clients-icon:hover {
-  color: var(--accent-color);
+  fill: currentColor;
 }
 
 /* Footer */
@@ -593,6 +605,12 @@ ul.projects.list {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+  border: 1px solid var(--color-border-projects);
+}
+
+.projects.item:hover {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;;
 }
 
 .projects.item:nth-child(3n) {
@@ -610,8 +628,4 @@ ul.projects.list {
 
 .collection-name {
   padding: 20px 24px;
-  
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--color-border-projects);
 }
