@@ -48,7 +48,7 @@ body {
   align-items: center;
 }
 
-.section.site-nav {
+.header {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--color-border-header);
@@ -445,7 +445,6 @@ ul.button.list {
 
 ul.clients .item {
   margin-right: 30px;
-  border-radius: 1px;
 }
 
 ul.clients .item:last-child {
@@ -460,9 +459,11 @@ ul.clients .item:last-child {
   align-items: center;
   color: var(--color-icon);
   border: 1px solid var(--color-icon);
+  border-radius: 4px;
 }
 
-.clients-svg:hover {
+.clients-svg:hover,
+.clients-svg:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color); 
 }
